@@ -3,6 +3,7 @@ Module.register("mmm-weatherchart", {
                 country: 'Germany',
                 area: 'North_Rhine-Westphalia',
                 city: 'Duisburg',
+		updateInterval: 60 * 60 * 1000, // every hour
 		hideBorder: true,
         },
         getDom: function() {
@@ -11,8 +12,9 @@ Module.register("mmm-weatherchart", {
 
                 // invert and grayscale image via css
                 var style = "-webkit-filter: invert(100%) grayscale(100%);";
-		if (this.config.hideBorder)
+		if (this.config.hideBorder) {
 			style = "position: absolute; left: -7px; top: -25px; " + style;
+		}
                 var img = "<img src='" + src + "' style='" + style + "'>";
 
                 var wrapper = document.createElement("div");
@@ -24,6 +26,12 @@ Module.register("mmm-weatherchart", {
 		}
                 wrapper.innerHTML = img;
                 return wrapper;
-        }
+        },
+	start: function() {
+		var self = this;
+		setInterval(function() {
+			self.updateDom(); // no speed defined, so it updates instantly.
+		}, this.config.updateInterval);
+	},
 });
 
