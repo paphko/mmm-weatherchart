@@ -1,8 +1,8 @@
-Module.register("weatherchart", {
+Module.register("mmm-weatherchart", {
         defaults: {
                 country: 'Germany',
                 area: 'North_Rhine-Westphalia',
-                city: 'Dortmund',
+                city: 'Duisburg',
 		hideBorder: true,
         },
         getDom: function() {

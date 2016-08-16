@@ -1,6 +1,5 @@
-# Module: weatherchart
-This MagicMirror modules allows you to show a weather diagram provided by http://www.yr.no
-
+# Magic Mirror Module: mmm-weatherchart
+This [MagicMirror2](https://github.com/MichMich/MagicMirror) module allows you to show a weather diagram provided by http://www.yr.no
 
 ## Installation
 
@@ -11,7 +10,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ````
-git clone https://github.com/paphko/weatherchart.git
+git clone https://github.com/paphko/mmm-weatherchart.git
 ````
 
 Configure the module in your `config.js` file.
@@ -19,6 +18,7 @@ Configure the module in your `config.js` file.
 ## Using the module
 
 To use this module, you must first determine country, area, and city:
+
 1. go to http://www.yr.no
 2. enter your location into the search field at the top and select your city
 3. at the top-right, switch language to English
@@ -28,7 +28,7 @@ Now add the module to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		module: 'weatherchart',
+		module: 'mmm-weatherchart',
 		position: 'bottom_left', // this can be any of the regions
 		config: {
 			country: 'Germany', // as determined above
