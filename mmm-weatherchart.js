@@ -8,7 +8,7 @@ Module.register("mmm-weatherchart", {
         },
         getDom: function() {
                 // add current timestamp to avoid old cached image
-                var src = "http://www.yr.no/place/" + this.config.country + "/" + this.config.area + "/" + this.config.city + "/meteogram.png?" + new Date().getTime();
+                var src = "http://www.yr.no/place/" + this.config.country + "/" + this.config.area + "/" + this.config.city + "/meteogram.png#" + new Date().getTime();
 
                 // invert and grayscale image via css
                 var style = "-webkit-filter: invert(100%) grayscale(100%);";
