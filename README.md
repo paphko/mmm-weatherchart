@@ -38,6 +38,8 @@ modules: [
 			city: 'Duisburg', // as determined above
 			updateInterval: 60 * 60 * 1000, // update every hour
 			hideBorder: true, // whether or not a border with city name should be shown
+			negativeImage: true, // whether or not the default white image should be inverted
+			// mmDirectory: "/home/pi/MagicMirror/" // required for caching; adjust if it differs
 		}
 	},
 ]
@@ -79,6 +81,19 @@ The following properties can be configured:
 			<td><code>hideBorder</code></td>
 			<td>Wheather or not a border with city name should be shown.
 				<br><b>Default value:</b> <code>true</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>negativeImage</code></td>
+			<td>Wheather or not the white image should be inverted.
+				<br><b>Default value:</b> <code>true</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>mmDirectory</code></td>
+			<td>To avoid the image to be cached by the browser (issue #5), it is downloaded into the magic mirror / modules / mmm-weatherchart / cache folder.
+				I couldn't find a way to ask MM for this path, so I just hard-coded it here with the possibility to adjust it in case your installation looks different.
+				<br><b>Default value:</b> <code>/home/pi/MagicMirror/</code>
 			</td>
 		</tr>
 	</tbody>
