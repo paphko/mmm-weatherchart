@@ -1,7 +1,8 @@
 # Magic Mirror Module: mmm-weatherchart
 This [MagicMirror2](https://github.com/MichMich/MagicMirror) module allows you to show a weather diagram provided by http://www.yr.no
 
-Example is shown in the pictures of this [blog post](https://paphko.blogspot.de/2016/01/magic-mirror-openhab.html).
+![Screenshot](Screenshot.png "Screenshot")
+
 
 ## Installation
 
