@@ -40,6 +40,7 @@ modules: [
 			updateInterval: 60 * 60 * 1000, // update every hour
 			hideBorder: true, // whether or not a border with city name should be shown
 			negativeImage: true, // whether or not the default white image should be inverted
+			hoursToShow: 24, // Cut the image down to show less than the full 48 hour forecast. -1 to show everything.
 			// mmDirectory: "/home/pi/MagicMirror/" // required for caching; adjust if it differs
 		}
 	},
@@ -80,14 +81,20 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>hideBorder</code></td>
-			<td>Wheather or not a border with city name should be shown.
+			<td>Whether or not a border with city name should be shown.
 				<br><b>Default value:</b> <code>true</code>
 			</td>
 		</tr>
 		<tr>
 			<td><code>negativeImage</code></td>
-			<td>Wheather or not the white image should be inverted.
+			<td>Whether or not the white image should be inverted.
 				<br><b>Default value:</b> <code>true</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>hoursToShow</code></td>
+			<td>Cut the forecast down to this many hours (for a narrower picture).
+				<br><b>Default value:</b> <code>-1</code> (show full forecast)
 			</td>
 		</tr>
 		<tr>
