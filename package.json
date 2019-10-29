@@ -1,0 +1,27 @@
+{
+  "name": "mmm-weatherchart",
+  "version": "1.0.0",
+  "description": "This MagicMirror2 module allows you to show a weather diagram provided by http://www.yr.no",
+  "main": "mmm-weatherchart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paphko/mmm-weatherchart.git"
+  },
+  "keywords": [
+    "magic",
+    "mirror"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paphko/mmm-weatherchart/issues"
+  },
+  "homepage": "https://github.com/paphko/mmm-weatherchart#readme",
+  "dependencies": {
+    "del": "latest",
+    "request": "latest"
+  }
+}
