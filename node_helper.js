@@ -18,9 +18,11 @@ module.exports = NodeHelper.create({
 				host: payload.domain,
 				path: payload.path
 			};
+			var pngFiles = payload.mmDir + 'modules/mmm-weatherchart/cache/*.png';
+			del.sync([pngFiles]);
+			
 			http.get(options, function (response) {
-				var pngFiles = payload.mmDir + 'modules/mmm-weatherchart/cache/*.png';
-				del([pngFiles]);
+				
 				var cachedFile = 'modules/mmm-weatherchart/cache/map-' + new Date().getTime() + '.png';
 				var newImage = fs.createWriteStream(payload.mmDir + cachedFile);
 				response.on('data', function(chunk){
