@@ -16,6 +16,12 @@ Clone this repository:
 git clone https://github.com/paphko/mmm-weatherchart.git
 ````
 
+Install module:
+````
+cd mmm-weatherchart
+npm install
+````
+
 Configure the module in your `config.js` file.
 
 ## Using the module
