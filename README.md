@@ -29,9 +29,9 @@ Configure the module in your `config.js` file.
 To use this module, you must first determine country, area, and city:
 
 1. go to http://www.yr.no
-2. enter your location into the search field at the top and select your city
-3. at the top-right, switch language to English
-4. write down country, area, and city from the current URL, e.g.: http://www.yr.no/place/Germany/North_Rhine-Westphalia/Duisburg/
+2. Search for the location you want forecast for
+3. Navigate to the bottom of the table to find the link for "Forecast as SVG"
+4. Click the link to open in it in a new tab, and copy the url., e.g.: /en/content/2-3196359/meteogram.svg
 
 Now add the module to the modules array in the `config/config.js` file:
 ````javascript
@@ -40,9 +40,7 @@ modules: [
 		module: 'mmm-weatherchart',
 		position: 'bottom_left', // this can be any of the regions
 		config: {
-			country: 'Germany', // as determined above
-			area: 'North_Rhine-Westphalia', // as determined above
-			city: 'Duisburg', // as determined above
+			locationPath: "/en/content/2-3196359/meteogram.svg",
 			updateInterval: 60 * 60 * 1000, // update every hour
 			hideBorder: true, // whether or not a border with city name should be shown
 			negativeImage: true, // whether or not the default white image should be inverted
@@ -68,16 +66,8 @@ The following properties can be configured:
 	<thead>
 	<tbody>
 		<tr>
-			<td><code>country</code></td>
-			<td>Your country as determined above</td>
-		</tr>
-		<tr>
-			<td><code>area</code></td>
-			<td>Your area as determined above</td>
-		</tr>
-		<tr>
-			<td><code>city</code></td>
-			<td>Your city name as determined above</td>
+			<td><code>Location path</code></td>
+			<td>Your url link (after www.yr.no) which determines your location to be shown.</td>
 		</tr>
 		<tr>
 			<td><code>updateInterval</code></td>
