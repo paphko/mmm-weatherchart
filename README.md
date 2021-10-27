@@ -1,7 +1,7 @@
 # Magic Mirror Module: mmm-weatherchart
 This [MagicMirror2](https://github.com/MichMich/MagicMirror) module allows you to show a weather diagram provided by http://www.yr.no
 
-![Screenshot](Screenshot.png "Screenshot")
+![Screenshot](Screenshot1.png "Screenshot")
 
 
 ## Installation
