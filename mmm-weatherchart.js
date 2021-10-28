@@ -20,19 +20,20 @@ Module.register("mmm-weatherchart", {
 		var wrapper = document.createElement("div");
 		var img = document.createElement("img");
 		if (this.config.hideBorder || this.config.hoursToShow > 0) {
-			var width = 824;
+			var width = 782;
 			wrapper.style.overflow = "hidden";
 			wrapper.style.position = "relative";
 			img.style.position = "absolute";
 
 			if (this.config.hoursToShow > 0 && this.config.hoursToShow < 48) {
-				width = 26 + 16 * this.config.hoursToShow;
+				width = 34 + 12.5 * this.config.hoursToShow;
 			}
 
 			if (this.config.hideBorder) {
-				wrapper.style.height = "360px";
 				img.style.top = "-85px";
-				if (width == 824) {
+				img.style.left = "0px";
+				wrapper.style.height = "360px";
+				if (width == 782) {
 					width -= 14;
 				} else { // If hoursToShow is set, we've already cut off the right-side border
 					width -= 7;
