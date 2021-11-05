@@ -1,15 +1,12 @@
 Module.register("mmm-weatherchart", {
 
 	defaults: {
-		country: 'Germany',
-		area: 'North_Rhine-Westphalia',
-		city: 'Duisburg',
+		locationPath: "/en/content/2-3196359/meteogram.svg",
 		updateInterval: 60 * 60 * 1000, // every hour
 		hideBorder: true,
 		negativeImage: true,
 		retryDelay: 2500,
 		domain: "www.yr.no",
-		path: "/place/",
 		mmDirectory: "/home/pi/MagicMirror/", // not sure whether it is possible to ask MM for this path?
 		hoursToShow: -1
 	},
@@ -23,27 +20,27 @@ Module.register("mmm-weatherchart", {
 		var wrapper = document.createElement("div");
 		var img = document.createElement("img");
 		if (this.config.hideBorder || this.config.hoursToShow > 0) {
-			var width = 824;
+			var width = 782;
 			wrapper.style.overflow = "hidden";
 			wrapper.style.position = "relative";
 			img.style.position = "absolute";
 
 			if (this.config.hoursToShow > 0 && this.config.hoursToShow < 48) {
-				width = 26 + 16 * this.config.hoursToShow;
+				width = 34 + 12.5 * this.config.hoursToShow;
 			}
 
 			if (this.config.hideBorder) {
-				wrapper.style.height = "241px";
-				img.style.left = "-7px";
-				img.style.top = "-25px";
-				if (width == 824) {
+				img.style.top = "-85px";
+				img.style.left = "0px";
+				wrapper.style.height = "360px";
+				if (width == 782) {
 					width -= 14;
 				} else { // If hoursToShow is set, we've already cut off the right-side border
 					width -= 7;
 				}
 			} else {
 				img.style.left = "0px";
-				wrapper.style.height = "272px";
+				wrapper.style.height = "380px";
 			}
 			wrapper.style.width = width + "px";
 		}
@@ -64,10 +61,9 @@ Module.register("mmm-weatherchart", {
 
 	getWeatherMap: function() {
 		var self = this;
-		var mapLocal = this.config.path + this.config.country + "/" + this.config.area + "/" + this.config.city + "/meteogram.png";
 		var payload = {
 			domain: this.config.domain,
-			path: mapLocal,
+			path: this.config.locationPath,
 			mmDir: this.config.mmDirectory
 		};
 		self.sendSocketNotification("FETCH_MAP", payload);
