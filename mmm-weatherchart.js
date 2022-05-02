@@ -25,7 +25,7 @@ Module.register("mmm-weatherchart", {
 			wrapper.style.position = "relative";
 			img.style.position = "absolute";
 
-			if (this.config.hoursToShow > 0 && this.config.hoursToShow < 48) {
+			if (this.config.hoursToShow > 0 && this.config.hoursToShow < 62) {
 				width = 34 + 12.5 * this.config.hoursToShow;
 			}
 
